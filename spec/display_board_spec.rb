@@ -148,6 +148,8 @@ describe "#display_board in 'lib/display_board.rb" do
       board = ["X", "X", "X", "X", "X", "X", "X", "X", "X"] # This is not correct
 
       # Don't touch the following lines.
+      output = capture_puts{ display_board(board)}
+      rows = output.split("\n")
 
 
       # Each line that starts with expect represents a row in the ouput.
@@ -186,6 +188,7 @@ describe "#display_board in 'lib/display_board.rb" do
       expect(rows[2]).to eq(" O | O | O ")
       expect(rows[3]).to eq("-----------")
       expect(rows[4]).to eq(" O | O | O ")
+    end 
 
       # Hint: You should be able to copy the code in the previous it example
       # and make a few simple edits to convert the previous example to this
